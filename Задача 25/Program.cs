@@ -11,15 +11,20 @@ int numberA = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Введите первое число B");
 int numberB = Convert.ToInt32(Console.ReadLine());
-int res = 1;
-int count = 1;
+
+
+int Degree(int numA, int numB)
+{
+    int res = 1;
+    for (int count = 1; count <= numB; count++)
+    {
+        res = numA * res;
+    }
+    return res;
+}
 if (numberB > 1)
 {
-    while (numberB >= count)
-    {
-        res = numberA * res;
-        count++;
-    }
-    Console.WriteLine($"Число {numberA} в степени {numberB} = {res}");
+    int degree = Degree(numberA, numberB);
+    Console.WriteLine($"Число {numberA} в степени {numberB} = {degree}");
 }
 else Console.WriteLine("Ошибка.Введите натуральную степень");
