@@ -3,6 +3,14 @@
 
 //[3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
 
+Console.WriteLine("Задайте длину массива");
+int sizeArray = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Задайте минимальное число массива");
+int minArray = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Задайте максимальное число массива");
+int maxArray = Convert.ToInt32(Console.ReadLine());
 
 double[] CreateArrayRndDouble(int size, int min, int max)
 {
@@ -26,3 +34,34 @@ void PrintArray(double[] array)
     }
     Console.WriteLine("]");
 }
+
+double DifferenceNumberMin(double[] array)
+{
+    double min = array[0];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (min > array[i]) min = array[i];
+    }
+    return min;
+}
+
+double DifferenceNumberMax(double[] array)
+{
+    double max = array[0];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (max < array[i]) max = array[i];
+    }
+    return max;
+}
+
+double[] arr = CreateArrayRndDouble(sizeArray, minArray, maxArray);
+PrintArray(arr);
+
+double differenceNumberMin = DifferenceNumberMin(arr);
+double differenceNumberMax = DifferenceNumberMax(arr);
+double res = differenceNumberMax - differenceNumberMin;
+res = Math.Round(res, 1);
+Console.WriteLine($"Разница между максимальным и минимальным элементами массива = {res}");
