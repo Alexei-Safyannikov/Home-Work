@@ -36,5 +36,17 @@ void PrintArray(int[] array)
     Console.WriteLine("]");
 }
 
+int SumElement(int[] array)
+{
+    int sum = 0;
+    for (int i = 1; i < array.Length; i += 2)
+    {
+        sum += array[i];
+    }
+    return sum;
+}
+
 int[] arr = CreateArrayRndInt(sizeArray, minArray, maxArray);
 PrintArray(arr);
+int sumElement = SumElement(arr);
+Console.WriteLine($"Сумму элементов, стоящих на нечётных позициях = {sumElement}");
