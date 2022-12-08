@@ -9,9 +9,9 @@
 
 // 8 7,8 -7,1 9
 Console.Write("Введите кол-во строк двумерного массива: ");
-int m = Convert.ToInt32(Console.ReadLine());
+int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите кол-во столбцов двумерного массива: ");
-int n = Convert.ToInt32(Console.ReadLine());
+int columns = Convert.ToInt32(Console.ReadLine());
 
 double [,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
@@ -43,5 +43,5 @@ void PrintMatrix(double[,] matrix)
     Console.WriteLine("|");
     }
 }
-double[,] matrix = CreateMatrixRndInt(m,n,-9,9);
+double[,] matrix = CreateMatrixRndInt(rows,columns,-9,9);
 PrintMatrix(matrix);
