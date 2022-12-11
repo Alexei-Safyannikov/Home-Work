@@ -77,7 +77,7 @@ int[,] MultiplicationMatrix(int[,] matrix, int[,] matrix1)
             {
                 matrix2[i, j] = matrix[i, k] * matrix1[k, j];
                 sum += matrix2[i, j];
-                //Console.WriteLine($"значение {sum}");
+                //Console.WriteLine($"значение {k} - ({i},{j}) {sum}");
                 matrix2[i,j] = sum;
             }
 
